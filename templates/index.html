@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Parking Detection Demo</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Real-Time Parking Detection</h1>
+            <p class="subtitle">A live demo showcasing a fine-tuned YOLOv8 model for parking spot detection.</p>
+        </header>
+
+        <div class="instructions">
+            <h2>How it Works</h2>
+            <ol>
+                <li>Start typing a camera location in the search box below (e.g., "5th Ave", "Broadway").</li>
+                <li>Select a camera from the autocomplete suggestions that appear.</li>
+                <li>Click the "Detect Parking" button to see a real-time image with detected spots.</li>
+            </ol>
+        </div>
+
+        <div class="search-wrapper">
+            <div id="autocomplete-container" class="autocomplete-container">
+                <input type="text" id="camera-search" placeholder="Search for a camera location...">
+                <div id="autocomplete-results" class="autocomplete-results"></div>
+            </div>
+            <button id="detect-btn">Detect Parking</button>
+        </div>
+
+        <div id="results-container" class="results-container">
+            <div id="loader" class="loader" style="display: none;"></div>
+            <div id="result-wrapper">
+                <h3 id="detection-message" class="detection-message" style="display: none;"></h3>
+                <img id="result-image" src="" alt="Detection results will appear here." style="display: none;">
+            </div>
+            <p id="error-message" class="error-message" style="display: none;"></p>
+        </div>
+
+        <footer>
+            <p>Built by David Ingraham</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html> 

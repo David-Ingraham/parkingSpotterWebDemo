@@ -79,7 +79,7 @@ def detect_parking():
         return f"Error fetching image: {e}", 500
 
     # 2. Run the model on the image
-    results = model(img, verbose=False)
+    results = model(img, verbose=False, conf=0.08)
     processed_img = Image.fromarray(results[0].plot()[..., ::-1])
 
     # 3. Count open parking spots

@@ -74,7 +74,7 @@ def detect_parking():
         timestamp = int(time.time())
         img = fetch_and_save_image(camera_id, timestamp)
         if not img:
-            return "Failed to fetch image from camera.", 404
+            return "Failed to fetch image from camera.", 404  
     except Exception as e:
         return f"Error fetching image: {e}", 500
 
